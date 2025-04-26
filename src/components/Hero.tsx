@@ -47,15 +47,15 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Indicador do Carrossel */}
-        <div className="absolute bottom-8 right-224 z-20">
+        <div className="absolute bottom-8 right-32 sm:right-8 md:right-224 z-20">
           <div className="flex items-center gap-2 bg-[#E62F15] rounded-full px-6 py-3">
             {Array.from({ length: totalSlides }).map((_, index) => (
               <div
-              key={index}
-        className={`h-3 rounded-full transition-all duration-300 ease-in-out ${
-          index === currentSlide
-            ? 'bg-white w-8'  // Quando o slide for o atual, aumenta a largura e mantém a altura pequena
-            : 'bg-[#f76954] w-3'  // Os outros continuam com largura 3
+                key={index}
+                className={`h-3 rounded-full transition-all duration-300 ease-in-out ${
+                  index === currentSlide
+                    ? 'bg-white w-8 sm:w-6 md:w-5'  // Quando o slide for o atual, aumenta a largura e mantém a altura pequena
+                    : 'bg-[#f76954] w-3 sm:w-2 md:w-3'  // Os outros continuam com largura 3
                 }`}
               />
             ))}
