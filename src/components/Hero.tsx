@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Subtítulo */}
-          <div className="w-full flex justify-end mb-6">
+          <div className="w-full flex justify-end mb-8">
             <p className="text-2xl md:text-3xl">A melhor internet para o seu lar</p>
             <p className="text-2xl md:text-3xl">para seu lar</p>
           </div>

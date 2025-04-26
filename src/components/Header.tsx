@@ -12,12 +12,7 @@ const Header = () => {
       <div className="w-full bg-[#e6341a] text-white">
         <div className="max-w-[1440px] mx-auto flex justify-between items-center h-[56px] px-6">
           <span className="flex items-center gap-1">
-            <Image
-              src="/icons/clock.svg"
-              alt="Relógio"
-              width={16}
-              height={16}
-            />
+            <Image src="/icons/clock.svg" alt="Relógio" width={16} height={16} />
             Atendimento presencial: 8h - 12h e 13h30 - 18h
           </span>
 
@@ -66,40 +61,26 @@ const Header = () => {
 
           {/* Navegação Desktop */}
           <nav className="hidden md:flex gap-8">
-            <Link
-              href="/"
-              aria-current="page"
-              className="text-[#e6341a] border-b-2 border-cznet-red pb-1"
-            >
+            <Link href="/" aria-current="page" className="text-[#e6341a] border-b-2 border-cznet-red pb-1">
               Início
             </Link>
-            <Link href="/internet" className="text-[#e6341a] hover:text-cznet-red">
-              Internet
-            </Link>
-            <Link href="/telefonia" className="text-[#e6341a] hover:text-cznet-red">
-              Telefonia
-            </Link>
-            <Link href="/tv-por-assinatura" className="text-[#e6341a] hover:text-cznet-red">
-              TV Box
-            </Link>
-            <Link href="/area-de-atuacao" className="text-[#e6341a] hover:text-cznet-red">
-              Área de atuação
-            </Link>
-            <Link href="/sobre-nos" className="text-[#e6341a] hover:text-cznet-red">
-              Sobre nós
-            </Link>
+            <Link href="/internet" className="text-[#e6341a] hover:text-cznet-red">Internet</Link>
+            <Link href="/telefonia" className="text-[#e6341a] hover:text-cznet-red">Telefonia</Link>
+            <Link href="/tv-por-assinatura" className="text-[#e6341a] hover:text-cznet-red">TV Box</Link>
+            <Link href="/area-de-atuacao" className="text-[#e6341a] hover:text-cznet-red">Área de atuação</Link>
+            <Link href="/sobre-nos" className="text-[#e6341a] hover:text-cznet-red">Sobre nós</Link>
           </nav>
 
           {/* Botões Desktop */}
           <div className="hidden md:flex items-center gap-3">
             <button
-              className="border border-cznet-red text-cznet-red px-4 py-2 rounded-full text-sm hover:bg-cznet-red hover:text-white transition"
+              className="border border-cznet-red text-cznet-red px-6 py-3 rounded-full text-sm hover:bg-[#e6341a] hover:text-white transition"
               aria-label="Área PIX"
             >
               Área PIX
             </button>
             <button
-              className="bg-cznet-red text-white px-4 py-2 rounded-full text-sm hover:bg-red-600 transition"
+              className="bg-[#e6341a] text-white px-6 py-3 rounded-full text-sm hover:bg-red-600 transition"
               aria-label="Portal Pagamentos"
             >
               Portal Pagamentos
@@ -113,29 +94,33 @@ const Header = () => {
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="font-semibold">
               Início
             </Link>
-            <Link href="/internet" onClick={() => setMobileMenuOpen(false)}>
-              Internet
-            </Link>
-            <Link href="/telefonia" onClick={() => setMobileMenuOpen(false)}>
-              Telefonia
-            </Link>
-            <Link href="/tv-por-assinatura" onClick={() => setMobileMenuOpen(false)}>
-              TV Box
-            </Link>
-            <Link href="/area-de-atuacao" onClick={() => setMobileMenuOpen(false)}>
-              Área de atuação
-            </Link>
-            <Link href="/sobre-nos" onClick={() => setMobileMenuOpen(false)}>
-              Sobre nós
-            </Link>
+            <Link href="/internet" onClick={() => setMobileMenuOpen(false)}>Internet</Link>
+            <Link href="/telefonia" onClick={() => setMobileMenuOpen(false)}>Telefonia</Link>
+            <Link href="/tv-por-assinatura" onClick={() => setMobileMenuOpen(false)}>TV Box</Link>
+            <Link href="/area-de-atuacao" onClick={() => setMobileMenuOpen(false)}>Área de atuação</Link>
+            <Link href="/sobre-nos" onClick={() => setMobileMenuOpen(false)}>Sobre nós</Link>
 
             <div className="flex flex-col gap-2 pt-4">
-              <button className="border border-cznet-red text-cznet-red px-4 py-2 rounded-full text-sm hover:bg-cznet-red hover:text-white transition">
-                Área PIX
-              </button>
-              <button className="bg-cznet-red text-white px-4 py-2 rounded-full text-sm hover:bg-red-600 transition">
-                Portal Pagamentos
-              </button>
+  {/* Ajustando o ícone do PIX */}
+  <button className="border border-cznet-red text-cznet-red px-4 py-2 rounded-full text-xs hover:bg-cznet-red hover:text-white transition flex items-center gap-2">
+    <Image
+      src="/icons/pix.svg"
+      alt="Ícone PIX"
+      width={32} // Tamanho do ícone
+      height={32} // Tamanho do ícone
+      className="object-cover" // Garantindo que o ícone não distorça
+      priority
+    />
+    Área PIX
+  </button>
+
+              <div className="flex flex-col gap-2 pt-4">
+                <button className="border border-cznet-red text-cznet-red px-4 py-2 rounded-full text-xs hover:bg-cznet-red hover:text-white transition flex items-center gap-2">
+                  Portal Pagamentos
+                </button>
+
+                {/* Garantindo que o Portal Pagamentos apareça também no mobile */}
+              </div>
             </div>
           </div>
         )}
@@ -143,5 +128,4 @@ const Header = () => {
     </header>
   );
 };
-
 export default Header;
