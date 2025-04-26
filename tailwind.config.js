@@ -13,6 +13,9 @@ module.exports = {
         'cznet-white': '#FFFFFF',
         'cznet-gray': '#F5F5F5',
       },
+      fontFamily: {
+        poppins: ['var(--font-poppins)', 'sans-serif'],
+      },
     },
   },
   plugins: [],

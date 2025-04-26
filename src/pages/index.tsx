@@ -8,9 +8,9 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>CZnet - Internet de Fibra Óptica</title>
+        <title>CZnet Telecom</title>
         <meta name="description" content="Os melhores planos de internet fibra óptica" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="" />
       </Head>
 
       <Header />

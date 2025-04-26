@@ -32,7 +32,7 @@ const PlanosCards: React.FC = () => {
 
   return (
     <div className="py-12 px-4">
-      <h2 className="text-3xl font-bold text-center text-cznet-red mb-4">
+      <h2 className="text-3xl font-bold text-center text-[#e6341a] mb-4">
         Assine os melhores planos de internet fibra óptica! 🚀
       </h2>
       <p className="text-center mb-10">
@@ -42,7 +42,7 @@ const PlanosCards: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {planos.map((plano, index) => (
           <div key={index} className="border rounded-lg shadow-lg p-6">
-            <h3 className="text-2xl font-bold mb-4">{plano.velocidade} MEGA</h3>
+            <h3 className="text-2xl font-bold mb-4 text-[#e6341a]">{plano.velocidade} MEGA</h3>
             <ul className="mb-6">
               {plano.recursos.map((recurso, i) => (
                 <li key={i} className="flex items-center mb-2">
@@ -56,7 +56,7 @@ const PlanosCards: React.FC = () => {
             <div className="text-xl font-bold mb-4">
               R$ {plano.preco.toFixed(2)}<span className="text-sm font-normal">/mês</span>
             </div>
-            <button className="w-full bg-yellow-400 text-center py-2 rounded-md hover:bg-yellow-500">
+            <button className="w-full bg-[#FFC107] text-center py-2 rounded-md hover:bg-yellow-500">
               Contratar
             </button>
           </div>
