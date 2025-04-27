@@ -82,7 +82,7 @@ const PlanosCards: React.FC = () => {
     className="bg-white border border-gray-200 rounded-3xl shadow-lg p-6 w-full h-96 flex flex-col justify-between hover:scale-105 transition-transform duration-300"
   >
     <div>
-      <h3 className="text-2xl font-bold mb-4 text-[#e6341a] text-center">{plano.velocidade} MEGA</h3>
+      <h3 className="text-2xl font-bold mb-4 text-[#e6341a] text-clip">{plano.velocidade} MEGA</h3>
       <ul className="mb-6 space-y-2">
         {plano.recursos.map((recurso, i) => (
           <li key={i} className="flex items-center">
