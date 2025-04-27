@@ -18,7 +18,7 @@ const Header = () => {
 
           <div className="hidden sm:flex gap-6">
             <Link href="#" className="hover:underline flex items-center gap-1">
-              <Image src="/icons/book.svg" alt="Biblioteca" width={16} height={16} />
+              <Image src="/icons/livro.svg" alt="Biblioteca" width={16} height={16} />
               Biblioteca CZNet
             </Link>
             <Link href="#" className="hover:underline flex items-center gap-1">
