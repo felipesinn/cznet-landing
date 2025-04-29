@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link as ScrollLink } from "react-scroll"; 
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="w-full flex flex-col items-center font-poppins">
+    <header className="fixed top-0 w-full z-50 flex flex-col items-center font-poppins">
       {/* Barra superior vermelha */}
       <div className="w-full bg-[#e6341a] text-white">
         <div className="max-w-[1440px] mx-auto flex justify-between items-center h-[56px] px-6">
@@ -34,7 +35,7 @@ const Header = () => {
       </div>
 
       {/* Barra branca com logo, navegação e botões */}
-      <div className="w-full shadow-md bg-white">
+      <div className="w-full shadow-md bg-[#fffafa]">
         <div className="max-w-[1440px] mx-auto flex items-center justify-between h-[80px] px-6">
           {/* Logo */}
           <div className="flex items-center">
@@ -61,14 +62,48 @@ const Header = () => {
 
           {/* Navegação Desktop */}
           <nav className="hidden md:flex gap-8">
-            <Link href="/" aria-current="page" className="text-[#e6341a] border-b-2 border-cznet-red pb-1">
+            <Link href="/" className="text-[#e6341a] border-b-2 border-cznet-red pb-1">
               Início
             </Link>
-            <Link href="/internet" className="text-[#e6341a] hover:text-cznet-red">Internet</Link>
-            <Link href="/telefonia" className="text-[#e6341a] hover:text-cznet-red">Telefonia</Link>
-            <Link href="/tv-por-assinatura" className="text-[#e6341a] hover:text-cznet-red">TV Box</Link>
-            <Link href="/area-de-atuacao" className="text-[#e6341a] hover:text-cznet-red">Área de atuação</Link>
-            <Link href="/sobre-nos" className="text-[#e6341a] hover:text-cznet-red">Sobre nós</Link>
+
+            {/* Scroll suave */}
+            <ScrollLink
+              to="internet"
+              smooth={true}
+              duration={500}
+              offset={-80}
+              className="text-[#e6341a] hover:text-cznet-red cursor-pointer"
+            >
+              Internet
+            </ScrollLink>
+
+            <ScrollLink
+              to="telefonia"
+              smooth={true}
+              duration={500}
+              offset={-80}
+              className="text-[#e6341a] hover:text-cznet-red cursor-pointer"
+            >
+              Telefonia
+            </ScrollLink>
+
+            <ScrollLink
+              to="tv-box"
+              smooth={true}
+              duration={500}
+              offset={-80}
+              className="text-[#e6341a] hover:text-cznet-red cursor-pointer"
+            >
+              TV Box
+            </ScrollLink>
+
+            {/* Continua com Link normal */}
+            <Link href="/area-de-atuacao" className="text-[#e6341a] hover:text-cznet-red">
+              Área de atuação
+            </Link>
+            <Link href="/sobre-nos" className="text-[#e6341a] hover:text-cznet-red">
+              Sobre nós
+            </Link>
           </nav>
 
           {/* Botões Desktop */}
@@ -94,33 +129,65 @@ const Header = () => {
             <Link href="/" onClick={() => setMobileMenuOpen(false)} className="font-semibold">
               Início
             </Link>
-            <Link href="/internet" onClick={() => setMobileMenuOpen(false)}>Internet</Link>
-            <Link href="/telefonia" onClick={() => setMobileMenuOpen(false)}>Telefonia</Link>
-            <Link href="/tv-por-assinatura" onClick={() => setMobileMenuOpen(false)}>TV Box</Link>
-            <Link href="/area-de-atuacao" onClick={() => setMobileMenuOpen(false)}>Área de atuação</Link>
-            <Link href="/sobre-nos" onClick={() => setMobileMenuOpen(false)}>Sobre nós</Link>
 
+            {/* Scroll suave Mobile */}
+            <ScrollLink
+              to="internet"
+              smooth={true}
+              duration={500}
+              offset={-80}
+              onClick={() => setMobileMenuOpen(false)}
+              className="cursor-pointer"
+            >
+              Internet
+            </ScrollLink>
+
+            <ScrollLink
+              to="telefonia"
+              smooth={true}
+              duration={500}
+              offset={-80}
+              onClick={() => setMobileMenuOpen(false)}
+              className="cursor-pointer"
+            >
+              Telefonia
+            </ScrollLink>
+
+            <ScrollLink
+              to="tv-box"
+              smooth={true}
+              duration={500}
+              offset={-80}
+              onClick={() => setMobileMenuOpen(false)}
+              className="cursor-pointer"
+            >
+              TV Box
+            </ScrollLink>
+
+            {/* Continua normal */}
+            <Link href="/area-de-atuacao" onClick={() => setMobileMenuOpen(false)}>
+              Área de atuação
+            </Link>
+            <Link href="/sobre-nos" onClick={() => setMobileMenuOpen(false)}>
+              Sobre nós
+            </Link>
+
+            {/* Botões Mobile */}
             <div className="flex flex-col gap-2 pt-4">
-  {/* Ajustando o ícone do PIX */}
-  <button className="border border-cznet-red text-cznet-red px-4 py-2 rounded-full text-xs hover:bg-cznet-red hover:text-white transition flex items-center gap-2">
-    <Image
-      src="/icons/pix.svg"
-      alt="Ícone PIX"
-      width={32} // Tamanho do ícone
-      height={32} // Tamanho do ícone
-      className="object-cover" // Garantindo que o ícone não distorça
-      priority
-    />
-    Área PIX
-  </button>
-
-              <div className="flex flex-col gap-2 pt-4">
-                <button className="border border-cznet-red text-cznet-red px-4 py-2 rounded-full text-xs hover:bg-cznet-red hover:text-white transition flex items-center gap-2">
-                  Portal Pagamentos
-                </button>
-
-                {/* Garantindo que o Portal Pagamentos apareça também no mobile */}
-              </div>
+              <button className="border border-cznet-red text-cznet-red px-4 py-2 rounded-full text-xs hover:bg-cznet-red hover:text-white transition flex items-center gap-2">
+                <Image
+                  src="/icons/pix.svg"
+                  alt="Ícone PIX"
+                  width={20}
+                  height={20}
+                  className="object-cover"
+                  priority
+                />
+                Área PIX
+              </button>
+              <button className="bg-[#e6341a] text-white px-4 py-2 rounded-full text-xs hover:bg-red-600 transition">
+                Portal Pagamentos
+              </button>
             </div>
           </div>
         )}
@@ -128,4 +195,5 @@ const Header = () => {
     </header>
   );
 };
+
 export default Header;

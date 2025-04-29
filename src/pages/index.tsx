@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import PlanosCards from '../components/PlanosCards';
 import type { NextPage } from 'next';
+import Internet from '@/components/Internet';
 
 const Home: NextPage = () => {
   return (
@@ -17,7 +18,10 @@ const Home: NextPage = () => {
       <main>
         <Hero />
         <PlanosCards />
+        <Internet />
       </main>
+      <footer>
+      </footer>
     </div>
   );
 };
